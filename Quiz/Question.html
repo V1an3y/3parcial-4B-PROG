@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+
+body {
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 100%);
+  font-family: 'Poppins', sans-serif;
+
+  align-items: center;
+  justify-content: center;
+  
+  overflow: hidden;
+  margin: 0;
+}
+
+.quiz-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  width: 600px;
+  overflow: hidden;
+}
+
+.quiz-header {
+  padding: 4rem;
+}
+
+h2 {
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+button {
+  background-color: #8e44ad;
+  color: #fff;
+  border: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 1.3rem;
+}
+
+button:hover {
+  background-color: #732d91;
+}
+
+button:focus {
+  outline: none;
+  background-color: #5e3370;
+}
+    </style>
+    <nav class="navbar navbar-inverse navbar-stick-static-top">
+      <div class="container">
+        <a class="navbar-brand" style="color: rgb(133, 37, 244);" href="index.html">Inicio</a>
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="menu.html">Menu</a>
+          </li>
+          <li>
+            <a href="pedido.html">Pedido</a>
+          </li>
+          <li>
+            <a href="contacto.html">Contacto</a>
+          </li>
+          <li>
+            <a href="apimovies.html">Movies</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+          <div class="image-container">
+            <img src="imagen.jpg" alt="Imagen" id="question-image" style="width: 200px; height:200px;">
+          
+        <h2 id="question">Question text</h2>
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="a" class="answer">
+            <label for="a" id="a_text">Question</label>
+          </li>
+
+          <li>
+            <input type="radio" name="answer" id="b" class="answer">
+            <label for="b" id="b_text">Question</label>
+          </li>
+
+          <li>
+            <input type="radio" name="answer" id="c" class="answer">
+            <label for="c" id="c_text">Question</label>
+          </li>
+
+          <li>
+            <input type="radio" name="answer" id="d" class="answer">
+            <label for="d" id="d_text">Question</label>
+          </li>
+        </ul>
+      </div>
+      <button id="submit">Submit</button>
+    </div>
+    <script>
+        const quizData = [
+    {
+        question: "¿Contra que equipo debutó Yamaguchi para ayudar en el saque?",
+        image:"one1.jpg",
+        a: "Seirin",
+        b: "Date Tech",
+        c: "Aobajosai",
+        d: "Johzenji",
+        correct: "c",
+    },
+    {
+        question: "¿Cómo le dieron el número 10 a Hinata?",
+        image:"one2.jpg",
+        a: "Fue Casualidad",
+        b: "El lo pidio por ser el numero del pequeño gignte",
+        c: "Nadie lo queria",
+        d: "Solo quedaba ese numero",
+        correct: "a",
+    },
+    {
+        question: "¿Dónde se conocieron Hinata y Kenma?",
+        image:"one3.jpg",
+        a: "En una Tienda de convenencias",
+        b: "En un partido de Voley",
+        c: "Por la calle",
+        d: "En la escuela",
+        correct: "c",
+    },
+    {
+        question: "¿Cómo se llama el primer opening?",
+        image:"imagen1.jpg",
+        a: "Tenchi Gaeshi",
+        b: "Imagination",
+        c: "Ah yeah!!",
+        d: "Fly",
+        correct: "b",
+    },
+];  // Un array que contiene los datos del cuestionario
+
+const quiz = document.getElementById('quiz');  // Obtiene el elemento HTML con el id "quiz"
+const answerEls = document.querySelectorAll('.answer');  // Obtiene todos los elementos HTML con la clase "answer"
+const questionEl = document.getElementById('question');  // Obtiene el elemento HTML con el id "question"
+const a_text = document.getElementById('a_text');  // Obtiene el elemento HTML con el id "a_text"
+const b_text = document.getElementById('b_text');  // Obtiene el elemento HTML con el id "b_text"
+const c_text = document.getElementById('c_text');  // Obtiene el elemento HTML con el id "c_text"
+const d_text = document.getElementById('d_text');  // Obtiene el elemento HTML con el id "d_text"
+const submitBtn = document.getElementById('submit');  // Obtiene el elemento HTML con el id "submit"
+
+let currentQuiz = 0;  // Variable para realizar un seguimiento de la pregunta actual del cuestionario
+let score = 0;  // Variable para realizar un seguimiento del puntaje del usuario
+
+loadQuiz();  // Carga la primera pregunta del cuestionario
+
+function loadQuiz() {
+    deselectAnswers();  // Deselecciona todas las respuestas del cuestionario
+    const currentQuizData = quizData[currentQuiz];  // Obtiene los datos de la pregunta actual del cuestionario
+    questionEl.innerText = currentQuizData.question;  // Muestra la pregunta actual en el elemento HTML correspondiente
+    a_text.innerText = currentQuizData.a;  // Muestra la opción de respuesta A en el elemento HTML correspondiente
+    b_text.innerText = currentQuizData.b;  // Muestra la opción de respuesta B en el elemento HTML correspondiente
+    c_text.innerText = currentQuizData.c;  // Muestra la opción de respuesta C en el elemento HTML correspondiente
+    d_text.innerText = currentQuizData.d;  // Muestra la opción de respuesta D en el elemento HTML correspondiente
+
+    const questionImage = document.getElementById("question-image");
+    questionImage.src = currentQuizData.image;
+
+}
+
+function deselectAnswers() {
+    answerEls.forEach(answerEl => answerEl.checked = false);  // Desmarca todas las casillas de verificación de respuesta
+}
+
+function getSelected() {
+    let answer;
+
+    answerEls.forEach(answerEl => {
+        if (answerEl.checked) {
+            answer = answerEl.id;  // Obtiene la opción de respuesta seleccionada por el usuario
+        }
+    });
+
+    return answer;  // Devuelve la opción de respuesta seleccionada
+}
+
+submitBtn.addEventListener('click', () => {
+    const answer = getSelected();  // Obtiene la opción de respuesta seleccionada por el usuario
+
+    if (answer) {
+        if (answer === quizData[currentQuiz].correct) {
+            score++;  // Incrementa el puntaje si la respuesta es correcta
+        }
+
+        currentQuiz++;  // Increment
+        if(currentQuiz < quizData.length) {
+            loadQuiz()
+        } else {
+            quiz.innerHTML = `
+                <h2>Contestaste ${score}/${quizData.length} de preguntas correctamente</h2>
+
+                <button onclick="location.reload()">Reload</button>
+            `
+        }
+    }
+})
+    </script>
+
+
+  </body>
+</html>

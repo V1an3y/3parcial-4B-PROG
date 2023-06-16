@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.cdnfonts.com/css/amazdoom" rel="stylesheet">    
+<div style="margin: 24px;">
+	<nav class="navbar navbar-light" style="background-color:  black;">
+	<ul class="nav navbar-nav">
+	<li class="active">
+	<a class="navbar-brand" href="Index1.html">Inico</a>
+	</li>
+		<li>
+	<a href="menu.html">Menu</a>
+	</li>
+	<li>
+    <a href="apimovies.html">Peliculas</a>
+	</li>
+	<li>
+		<a href="CalculadoraFisica.html">Calculadora Fisica</a>
+    </li>
+    <li>
+		<a href="Calculadora.html">Calculadora</a>
+    </li>
+    <li>
+		<a href="Footer.html">Contacto</a>
+    </li>
+	          </ul>
+	     </div>
+	</nav>
+</div>   
+	<title>footer</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="footer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section about">
+           <h1>Contactame</h1>
+            <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales</p>
+            <div class="contact-links">
+              <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="http://www.instagram.com/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="http://www.discord.com/miperfil" target="_blank"><i class="fab fa-discord"></i></a>
+              <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="http://www.youtube.com/miperfil" target="_blank"><i class="fab fa-youtube"></i></a><footer>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script type="text/javascript">
+      const socialnetworks = document.querySelectorAll('contact-links a');
+      socialnetworks.forEach(link =>{
+        link.addEventListener('click', e=>{
+          e.preventDefault();
+          window.open(link.href, '_blank');
+        });
+      });
+    </script>
+    </footer>
+    </body>
+    </html>

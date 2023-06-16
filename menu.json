@@ -1,0 +1,94 @@
+{
+    "menu":[
+    { 
+      "nombre": "Hamburguesa",
+      "descripcion": "Carne de res, con lechuga, tomate, queso amarillo, especias.",
+      "precio": 100,
+      "imagen":"1.jpg"
+    },
+    {
+        "nombre": "pizza",
+      "descripcion": "peperoni, tres carnes, hawaiana",
+      "precio": 110,
+      "imagen":"2.jpg"
+    },
+    {
+        "nombre": "Burritos",
+      "descripcion": "frijol con queso o de pizza, carne",
+      "precio": 220,
+      "imagen":"3.jpg"
+    },
+    {
+    "nombre": "Espaguetti rojo",
+      "descripcion": "Contiene Espaguetti con salchichas y con pasta hecha de tomate rojo, pimiento morron, media crema, cremay especias.",
+      "precio": 90,
+      "imagen":"4.jpg"
+    },
+    {
+    "nombre": "Carne molida",
+      "descripcion": "Contiene carne de puerco/res, con papa, zanahoria.",
+      "precio": 90,
+      "imagen":"5.jpg"
+    },
+    {
+    "nombre": "Huevo a la mexicana",
+      "descripcion": " huevo, tomate,chile,cebolla todo picado en cuadritos",
+      "precio": 100,
+      "imagen":"6.jpg"
+    },
+    {
+    "nombre": "Huevo con jaom",
+      "descripcion":"huevo y jamon",
+      "precio": 100,
+      "imagen":"7.jpg"
+    },
+    {
+    "nombre": "Tacos",
+      "descripcion": "Contiene Carne de su preferecia, especias y verduras.",
+      "precio": 90,
+      "imagen":"8.jpg"
+    },
+    {
+    "nombre": "torta",
+      "descripcion": "jamon con tres tipos de queso a compañado de aguacate",
+      "precio": 55,
+      "imagen":"9.jpg"
+    },
+    {
+    "nombre": "Menudo Mexicano",
+      "descripcion": "Contiene Pancita de res, cebolla, ajo, laurel, maiz grande, chiles rojos secos, especias.",
+      "precio": 145,
+      "imagen":"10.jpg"
+    },
+    {
+    "nombre": "Ensalada de frutas navideña",
+      "descripcion": "Contiene manzana, uvas, fresa, piña y durazno en almibar, pasas, cacahuate, leche condensada, crema agria y vainilla.",
+      "precio": 60,
+      "imagen":"11.jpg"
+    },
+    {
+    "nombre": "Escabeche de pollo",
+      "descripcion": "Contiene Pollo, cebolla blanca en finas rodajas, vinagre blanco, zanahoria en rodajas, hojas de laurel y especias.",
+      "precio": 120,
+      "imagen":"12.jpg"
+    },
+    {
+    "nombre": "Ensalada de pollo",
+      "descripcion":"pollo, crema, uva, nuez mezclado ",
+      "precio": 50,
+      "imagen":"13.jpg"
+    },
+    {
+    "nombre": "Tamal veracruzano",
+      "descripcion":"Contiene carne de puerco, chile ancho, hija de platano, cebolla y especias.",
+      "precio": 90,
+      "imagen":"14.jpg"
+    },
+    {
+    "nombre": "Tamal de elote",
+      "descripcion":"Contiene elote, crema, mantequilla, leche, sal, azucar y polvo para hornear.",
+      "precio": 80,
+      "imagen":"15.jpg"
+    }
+ ]
+ }
