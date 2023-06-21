@@ -6,74 +6,111 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
-
-	<title>Pagina 1</title>
-</head>
-<body>
-
-	<div style="margin:24px;">
-		<nav class="navbar navbar-light" style="background-color: black;">
-			<div class="container">
-				<a class="navbar-brand" href="Index1.html">Inicio</a>
-				<ul class="nav navbar-nav">
-					<li >
-						<a href="menu.html">Menu</a>
-					</li>
-					<li class="active">
-						<a href="formulario.html">Formulario</a>
+<link href="https://fonts.cdnfonts.com/css/amazdoom" rel="stylesheet">    
+<link rel="stylesheet" type="text/css" href="footer.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<div style="margin:24px;">
+	<nav class="navbar navbar-light" style="background-color: black;">
+		<div class="container">
+			<li class="active" ></li>
+			<a class="navbar-brand" href="Index1.html">Inicio</a>
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="menu.html">Menu</a>
 					</li>
 					<li>
-						<a href="resultado.html">Resultado</a>
+					<a href="apimovies.html">Peliculas</a>
 					</li>
 					<li>
-						<a href="contacto.html">Contacto</a>
+						<a href="CalculadoraFisica.html">Fisica</a>
 					</li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-<h1>Formulario</h1>
-
-
-<form id="pedido">
-	<p>Nombre: <input type="text" name="nombre" id="nombre" size="40">
-	</p>	
-		<p>Apellido: <input type="text" name="apellido" id="apellido" size="40">
-	</p>
-		<p>Direccion: <input type="text" name="direccion" id="direccion" size="35">
-	</p>		
-		<p>Colonia: <input type="text" name="colonia" id="colonia" size="40">
-	</p>
-		<p>Telefono: <input type="text" name="telefono" id="telefono" size="40">
-	</p>	
-	<p>Servilletas?: 
-		<morado><input type="radio" name="servilletas" value="si"> <rosa>Si</rosa></morado>
-		<input type="radio" name="servilletas" value="no"><morado>No</morado>	<br><br>
-	<p> Que vas a pedir: 
+					<li>
+						<a href="Calculadora.html">Calculadora</a>
+					</li>
+					<li>
+						<a href="Footer.html">Contacto</a>
+					</li>
+					<li>
+					  <a href="formulario.html">Formulario</a>
+					  </li>
+					  <li>
+						<a href="pedidorealizado.html">Pedido Realizado</a>
+					  </li>
+					  <li>
+                        <a href="perfil.html">Perfil</a>
+                    </li>
+					<li>
+                        <a href="Question.html">Cuestionario</a>
+                    </li>
+							  </ul>
+		</div>
+	</nav>
+  </div>
+	<ti>Formulario</ti>
+	<form id="pedido">
+		<p> Nombre: <input type="text" name="nombre" id="nombre" size="40">
+		</p>
+		<p> Apellido: <input type="text" name="apellido" id="apellido" size="40">
+		</p>
+		<p> Direccion: <input type="text" name="direccion" id="direccion" size="40">
+		</p>
+		<p> Colonia: <input type="text" name="colonia" id="colonia" size="40">
+		</p>
+		<p> Telefono: <input type="number" name="telefono" id="telefono" size="40">
+		</p>
+		<p> Sexo: <input type="radio" name="sexo" value="hombre"><green>Hombre </green><input type="radio" name="sexo" value="mujer"><pink>Mujer</pink>
+		</p>
+		<br>
+		<br>
+	<p> Que vas a pedir:
 		<select name="menu" id="menu">
-			<optgroup label="Lonches">
-				<option value="hamburguesa">Hamburguesa</option>
-				<option value="Torta">Torta</option>
-				<option value="Sandwich">Sandwich</option>
-				<option value="Torta Ahogada">Torta Ahogada</option>
-			</optgroup>
+			<optgroup label="Comida Rapida">
+			<option value="hamburguesa">Hamburguesa</option>
+			<option value="burritos">Burritos</option>
+
+		</optgroup>
 			<optgroup label="Tacos">
-				<option value="Tacos Bistek">Tacos de Bistek</option>
-				<option value="Tacos al Pastor">Tacos al Pastor</option>
-				<option value="Tacos Campechanos">Tacos Campechanos</option>
-				<option value="Sincronizada">Sincronizada</option>
-			</optgroup>
+			<option value="sincronizada">Sincronizada</option>
+        </optgroup>
+			<optgroup label="Antojitos">
+				<option value="empanadas">Empanadas</option>
+				<option value="flautas">Flautas</option>
+				<option value="enchiladas">Enchiladas</option>
+				<option value="chilaquiles">Chilaquiles</option>
+		</optgroup>
 		</select>
-		<hr>
-		<h1 style="color: grey;">Complementos</h1>
+		<br>
+		<p> Que vas a pedir de bebida:
+		<select name="soda" id="soda">
+			<option value="ninguno">Ninguno</option>
+			<optgroup label="Refrescos">
+			<option value="Coca-cola">Coca-Cola</option>
+			<option value="Sprite">Sprite</option>
+			<option value="Fanta">Fanta</option>
+			<option value="Manzanita">Mnzanita</option>
+
+		</select>
+		<br>
+		<ti>Complementos</ti>
+		<br>
 		<input type="checkbox" id="tomate" checked><label for="tomate" style="font-size: 20px;">Tomate</label><br>
-		<input type="checkbox" id="cebolla" ><label for="cebolla" style="font-size: 20px;">Cebolla</label><br>
-		<input type="checkbox" id="pepinillos" ><label for="pepinillos" style="font-size: 20px;">Penillos</label><br>
-		<input type="checkbox" id="pina" ><label for="pina" style="font-size: 20px;">Pina</label><br>
+		<input type="checkbox" id="servilletas" checked><label for="servilletas" style="font-size: 20px;">Servilletas</label><br>
+		<input type="checkbox" id="aderezos" checked><label for="aderezos" style="font-size: 20px;">Aderezos</label><br>
+		<input type="checkbox" id="queso" checked><label for="queso" style="font-size: 20px;">Queso</label><br>
+		<input type="checkbox" id="jamon" checked><label for="jamon" style="font-size: 20px;">Jamon</label><br>
+		<input type="checkbox" id="cebolla" checked><label for="cebolla" style="font-size: 20px;">Cebolla</label><br>
+		<input type="checkbox" id="kepchup" checked><label for="kepchup" style="font-size: 20px;">Aderezos</label><br>
+		<input type="checkbox" id="salsa" checked><label for="salsa" style="font-size: 20px;">Salsa</label><br>
+		<input type="checkbox" id="aguacate" checked><label for="aguacate" style="font-size: 20px;">Aguacate</label><br>
+	</p>
 	</p>
 		<input type="submit" value="Enviar">
 		<input type="reset" value="Borrar">
-</form>
+
+
+
+	</form>
+
 <script type="text/javascript">
 	const form=document.getElementById("pedido");
 	form.addEventListener("submit", function(event){
@@ -85,16 +122,25 @@
 			telefono:formData.get("telefono"),
 			direccion:formData.get("direccion"),
 			colonia:formData.get("colonia"),
-			servilletas:formData.get("servilletas"),
+			sexo:formData.get("sexo"),
 			menu:formData.get("menu"),
-			tomate:document.getElementById("tomate").checked ? "Si" : "No",
-			cebolla:document.getElementById("cebolla").checked ? "Si" : "No",
-			pepinillos:document.getElementById("pepinillos").checked ? "Si" : "No",
-			pina:document.getElementById("pina").checked ? "Si" : "No"
+			soda:formData.get("soda"),
+			tomate:document.getElementById("tomate").checked ? "si" : "no",
+			serviletas:document.getElementById("servilletas").checked ? "si" : "no",
+			aderezos:document.getElementById("aderezos").checked ? "si" : "no",
+			queso:document.getElementById("queso").checked ? "si" : "no",
+			jamon:document.getElementById("jamon").checked ? "si" : "no",
+			salsa:document.getElementById("salsa").checked ? "si" : "no",
+			kepchup:document.getElementById("kepchup").checked ? "si" : "no",
+			cebolla:document.getElementById("cebolla").checked ? "si" : "no",
+			aguacate:document.getElementById("aguacate").checked ? "si" : "no"
+
+
 		};
-		localStorage.setItem("orden",JSON.stringify(orden));
+		localStorage.setItem("orden", JSON.stringify(orden));
 		window.location.href="pedidorealizado.html";
 	});
 </script>
+
 </body>
 </html>

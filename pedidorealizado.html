@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.cdnfonts.com/css/amazdoom" rel="stylesheet">    
+<link rel="stylesheet" type="text/css" href="footer.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<div style="margin: 15px;">
+	<nav class="navbar navbar-light" style="background-color: black;">
+		<div class="container">
+      <li class="active" ></li>
+			<a class="navbar-brand" href="Index1.html">Inicio</a>
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="menu.html">Menu</a>
+					</li>
+					<li>
+					<a href="apimovies.html">Peliculas</a>
+					</li>
+					<li>
+						<a href="CalculadoraFisica.html">Fisica</a>
+					</li>
+					<li>
+						<a href="Calculadora.html">Calculadora</a>
+					</li>
+					<li>
+						<a href="Footer.html">Contacto</a>
+					</li>
+					<li>
+					  <a href="formulario.html">Formulario</a>
+					  </li>
+					  <li>
+						<a href="pedidorealizado.html">Pedido Realizado</a>
+					  </li>
+					  <li>
+                        <a href="perfil.html">Perfil</a>
+                    </li>
+					<li>
+                        <a href="Question.html">Cuestionario</a>
+                    </li>
+							  </ul>
+		</div>
+	</nav>
+  </div>
+<center><h1 style="font-family: 'Times New Roman', Times, serif;font-size: 50px; margin-left: auto; margin-right: auto;" >Pedido realizado</h1></center>
+<center><h3 style="font-family: 'Inconsolata', monospace;">Con exito</h3></center>
+<img src="imagenes/gra.png" width="300" height="300" class="left">
+<br> <br>
+<pad>
+<ul>
+	<p><strong>Nombre: </strong><span id="nombre"></span></p>
+	<p><strong>Apellido: </strong><span id="apellido"></span></p>
+	<p><strong>Telefono: </strong><span id="telefono"></span></p>
+	<p><strong>Direccion: </strong><span id="direccion"></span></p>
+	<p><strong>Colonia: </strong><span id="colonia"></span></p>
+	<p><strong>Sexo: </strong><span id="sexo"></span></p>
+	<p><strong>Menu: </strong><span id="menu"></span></p>
+	<p><strong>Refresco: </strong><span id="soda"></span></p>
+	<p><strong>Tomate: </strong><span id="tomate"></span></p>
+	<p><strong>Aderezos: </strong><span id="aderezos"></span></p>
+	<p><strong>Servilletas: </strong><span id="servilletas"></span></p>
+	<p><strong>Jamon: </strong><span id="jamon"></span></p>
+	<p><strong>Queso: </strong><span id="queso"></span></p>
+	<p><strong>Aguacate: </strong><span id="aguacate"></span></p>
+	<p><strong>Cebolla: </strong><span id="cebolla"></span></p>
+	<p><strong>Kepchup: </strong><span id="kepchup"></span></p>
+	<p><strong>Salsa: </strong><span id="salsa"></span></p>
+
+
+
+
+	<script type="text/javascript">
+		const orden=JSON.parse(localStorage.getItem("orden"));
+		document.getElementById("nombre").textContent=orden.nombre;
+		document.getElementById("apellido").textContent=orden.apellido;
+		document.getElementById("telefono").textContent=orden.telefono;
+		document.getElementById("direccion").textContent=orden.direccion;
+		document.getElementById("colonia").textContent=orden.colonia;
+		document.getElementById("sexo").textContent=orden.sexo;
+		document.getElementById("menu").textContent=orden.menu;
+		document.getElementById("soda").textContent=orden.soda;
+		document.getElementById("tomate").textContent=orden.tomate;
+		document.getElementById("aderezos").textContent=orden.aderezos;
+		document.getElementById("servilletas").textContent=orden.servilletas;
+		document.getElementById("jamon").textContent=orden.jamon;
+		document.getElementById("queso").textContent=orden.queso;
+		document.getElementById("cebolla").textContent=orden.cebolla;
+		document.getElementById("salsa").textContent=orden.salsa;
+		document.getElementById("kepchup").textContent=orden.kepchup;
+		document.getElementById("aguacate").textContent=orden.aguacate;
+
+		</script>
+
+
+</ul>
+</pad>
+</body>
+</html>
