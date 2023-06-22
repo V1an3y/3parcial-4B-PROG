@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="calc.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="footer.css">
+<div style="margin:24px;">
+  <nav class="navbar navbar-light" style="background-color: black;">
+      <div class="container">
+          <a class="navbar-brand" href="Index1.html">Inicio</a>
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="menu.html">Menu</a>
+              </li>
+              <li>
+                <a href="apimovies.html">Peliculas</a>
+              </li>
+              <li>
+                <a href="CalculadoraFisica.html">Fisica</a>
+                </li>
+                <li>
+                <a href="Calculadora.html">Calculadora</a>
+                </li>
+                <li>
+                <a href="Footer.html">Contacto</a>
+                </li>
+                <li>
+                  <a href="formulario.html">Formulario</a>
+                  </li>
+                  <li>
+                    <a href="pedidorealizado.html">Pedido Realizado</a>
+                  </li>
+                  <li>
+                    <a href="resultado.html">Resultado</a>
+                  </li>
+                  <li>
+                    <a href="perfil.html">Perfil</a>
+                </li>
+                <li>
+                  <a href="Question.html">Cuestionario</a>
+              </li>
+                        </ul>
+      </div>
+  </nav>
+</div>
+<title>Calculadora</title>
+</head>
+<body>
+    <center>
+    <div class="calc">
+        <input type="text" name="ans" id="ans">
+        <div class="btn">
+            <input type="button" value='c' onclick="Clear()">
+            <input type="button" value='%' onclick="Back('')">
+            <input type="button" value='←' onclick="Clear('←')">
+            <input type="button" value='/' onclick="Solve('/')">
+            <br>
+            <input type="button" value='7' onclick="Solve(7)">
+            <input type="button" value='8' onclick="Solve(8)">
+            <input type="button" value='9' onclick="Solve(9)">
+            <input type="button" value='x' onclick="Solve('*')">
+            <br>
+            <input type="button" value='4' onclick="Solve(4)">
+            <input type="button" value='5' onclick="Solve(5)">
+            <input type="button" value='6' onclick="Solve(6)">
+            <input type="button" value='-' onclick="Solve('-')">
+            <br>
+            <input type="button" value='1' onclick="Solve(1)">
+            <input type="button" value='2' onclick="Solve(2)">
+            <input type="button" value='3' onclick="Solve(3)">
+            <input type="button" value='+' onclick="Solve('+')">
+            <br>
+            <input type="button" value='00' onclick="Solve('00')">
+            <input type="button" value='0' onclick="Solve('0')">
+            <input type="button" value='.' onclick="Solve('.')">
+            <input type="button" value='=' onclick="Result()">
+        </div>
+    </div>
+    <script type="text/javascript">
+        function Solve(val){
+            var v=document.getElementById('ans');
+            v.value +=val;
+        }
+        function Result(){
+            var v1=document.getElementById('ans').value;
+            var v2=eval(v1);
+            document.getElementById('ans').value=v2;
+        }
+        function Clear(){
+            var input=document.getElementById('ans');
+            input.value='';
+        }
+        function Back(){
+            var back=document.getElementById('ans');
+            back.value=back.value.slice(o,-1);
+        }
+    </script>
+    </center>
+    <br>
+    <div id="footer"></div>
+<script type="text/javascript">
+	$(function(){
+		$("#footer").load("footer.html");
+	});
+</script>
+<link rel="stylesheet" type="text/css" href="footer.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+       <h1>Contactame</h1>
+        <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales</p>
+        <div class="contact-links">
+          <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="http://www.instagram.com/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="http://www.discord.com/miperfil" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="http://www.youtube.com/miperfil" target="_blank"><i class="fab fa-youtube"></i></a><footer>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+  const socialnetworks = document.querySelectorAll('contact-links a');
+  socialnetworks.forEach(link =>{
+    link.addEventListener('click', e=>{
+      e.preventDefault();
+      window.open(link.href, '_blank');
+    });
+  });
+</script>
+</footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Menu</title>
+</head>
+<body>
+
+    <div style="margin:24px;">
+        <nav class="navbar navbar-light" style="background-color: black;">
+            <div class="container">
+                <a class="navbar-brand" href="Index1.html">Inicio</a>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="menu.html">Menu</a>
+                        </li>
+                        <li>
+                        <a href="apimovies.html">Peliculas</a>
+                        </li>
+                        <li>
+                            <a href="CalculadoraFisica.html">Fisica</a>
+                        </li>
+                        <li>
+                            <a href="Calculadora.html">Calculadora</a>
+                        </li>
+                        <li>
+                            <a href="Footer.html">Contacto</a>
+                        </li>
+                        <li>
+                          <a href="formulario.html">Formulario</a>
+                          </li>
+                          <li>
+                            <a href="pedidorealizado.html">Pedido Realizado</a>
+                          </li>
+                          <li>
+                            <a href="perfil.html">Perfil</a>
+                        </li>
+                        <li>
+                            <a href="Question.html">Cuestionario</a>
+                        </li>
+                                  </ul>
+            </div>
+        </nav>
+    <center><h1>Menu Del Restaurante</h1></center>
+    <div id="Menu"></div>
+    <script>
+        fetch('menu.json')
+        .then(response => response.json())
+        .then(data =>{
+            const tabla = document.createElement('table');
+            //esto es html solo para la tabla, como se vera arriba en la cabecera
+            tabla.innerHTML=`
+            <thead>
+                <tr>
+            
+                    <th>Categoria</th>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Seleccion</th>
+                </tr>    
+            </thead>
+            <tbody></tbody>`;
+            document.getElementById('menu').appendChild(tabla);
+            // Agrego datos de cada categoria y producto a la tabla
+            Object.keys(data).forEach(categoria =>{
+                data[categoria].forEach(producto =>{
+                    const fila=document.createElement('tr');
+                    fila.innerHTML=`
+                    <td>${categoria}</td>
+                    <td><img src="${producto.imagen}" alt="${producto.name}"></td>
+                    <td>${producto.nombre}</td>
+                    <td>${producto.descripcion}</td>
+                    <td>${producto.precio}</td>
+                    <td><input type='checkbox" class="producto" data-precio="${producto.nombre}"></td>
+                    `;
+                    tabla.querySelector('tbody').appendChild(fila);
+                });
+            });
+            // a partir de aqui, se realiza la suma de los productos
+            const procutos=document.querySelectorAll('.producto');
+            productos.forEach(producto => {
+                producto.addEventListener('change', () => {
+                    let suma =0;
+                    productos.forEach(producto => {
+                        if(producto.checked){
+                            suma+= parseFloat(producto.dataset.precio);
+                        }
+                    }); 
+                    document.getElementById('resultado').innerHTML=`<h1>TOTAL: $ ${suma.toFixed(2)} </h1>`;
+                });
+            });
+        })
+            .catch(error=> console.error(error));
+    </script>
+</body>
+</html>
